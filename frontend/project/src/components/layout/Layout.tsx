@@ -6,7 +6,7 @@ import Inventory from '../pages/Inventory';
 import Sales from '../pages/Sales';
 import Reports from '../pages/Reports';
 import Profile from '../pages/Profile';
-import Settings from '../pages/Settings';
+import SettingsPage from '../settings/SettingsPage';
 import UserManagement from '../pages/UserManagement';
 import AuditLogs from '../pages/AuditLogs';
 import TransactionHistory from '../pages/TransactionHistory';
@@ -35,7 +35,7 @@ const Layout: React.FC = () => {
       case 'profile':
         return <Profile />;
       case 'settings':
-        return <Settings />;
+        return <SettingsPage />;
       default:
         return <Dashboard />;
     }

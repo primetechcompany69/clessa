@@ -39,16 +39,16 @@ app.config.update({
 
 # Security middleware
 Talisman(app, 
-    force_https=True,
-    strict_transport_security=True,
-    session_cookie_secure=True,
+    force_https=False,
+    strict_transport_security=False,
+    session_cookie_secure=False,
     content_security_policy={
         'default-src': "'self'",
         'script-src': ["'self'", "'unsafe-inline'"],
         'style-src': ["'self'", "'unsafe-inline'"]
     }
 )
-CORS(app, supports_credentials=True)
+CORS(app, supports_credentials=True, origins="*")
 
 # Initialize extensions
 bcrypt = Bcrypt(app)
@@ -118,15 +118,19 @@ def role_required(role):
 
 def log_security_action(user_id, action, request):
     """Log security-related actions"""
-    ip_address = request.remote_addr
-    user_agent = request.headers.get('User-Agent')
-    
-    execute_query(
-        """INSERT INTO audit_log 
-        (user_id, action, ip_address, user_agent)
-        VALUES (%s, %s, %s, %s)""",
-        (user_id, action, ip_address, user_agent)
-    )
+    try:
+        ip_address = request.remote_addr
+        user_agent = request.headers.get('User-Agent')
+        
+        execute_query(
+            """INSERT INTO audit_logs 
+            (user_id, action, ip_address, user_agent)
+            VALUES (%s, %s, %s, %s)""",
+            (user_id, action, ip_address, user_agent)
+        )
+    except Exception as e:
+        # If audit_log table doesn't exist, log to app logger instead
+        app.logger.warning(f"Audit logging failed: {str(e)}. Action: {action}, User: {user_id}")
 
 # ========================
 # Authentication Endpoints
@@ -448,4 +452,4 @@ if __name__ == '__main__':
     handler.setLevel(logging.INFO)
     app.logger.addHandler(handler)
     
-    app.run(ssl_context='adhoc', debug=True)
+    app.run( debug=True)

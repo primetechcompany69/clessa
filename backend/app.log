@@ -1,0 +1,19 @@
+Database error: 1146 (42S02): Table 'mobile_pos_system.audit_log' doesn't exist
+Database error: 1146 (42S02): Table 'mobile_pos_system.audit_log' doesn't exist
+Audit logging failed: 1146 (42S02): Table 'mobile_pos_system.audit_log' doesn't exist. Action: login_failed, User: None
+Database error: 1146 (42S02): Table 'mobile_pos_system.audit_log' doesn't exist
+Audit logging failed: 1146 (42S02): Table 'mobile_pos_system.audit_log' doesn't exist. Action: login_failed, User: None
+Database error: 1146 (42S02): Table 'mobile_pos_system.audit_log' doesn't exist
+Audit logging failed: 1146 (42S02): Table 'mobile_pos_system.audit_log' doesn't exist. Action: login_failed, User: None
+Database error: 1054 (42S22): Unknown column 'user_agent' in 'field list'
+Audit logging failed: 1054 (42S22): Unknown column 'user_agent' in 'field list'. Action: login_failed, User: None
+Database error: 1054 (42S22): Unknown column 'user_agent' in 'field list'
+Audit logging failed: 1054 (42S22): Unknown column 'user_agent' in 'field list'. Action: login_failed, User: None
+Database error: 1048 (23000): Column 'user_id' cannot be null
+Audit logging failed: 1048 (23000): Column 'user_id' cannot be null. Action: login_failed, User: None
+Database error: 1048 (23000): Column 'user_id' cannot be null
+Audit logging failed: 1048 (23000): Column 'user_id' cannot be null. Action: login_failed, User: None
+Database error: 1048 (23000): Column 'user_id' cannot be null
+Audit logging failed: 1048 (23000): Column 'user_id' cannot be null. Action: login_failed, User: None
+Database error: 1048 (23000): Column 'user_id' cannot be null
+Audit logging failed: 1048 (23000): Column 'user_id' cannot be null. Action: login_failed, User: None

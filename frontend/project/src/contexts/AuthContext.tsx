@@ -47,7 +47,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     try {
       const response = await apiClient.login(email, password);
       setUser(response.user);
+      // Navigation will happen automatically when isAuthenticated becomes true
     } catch (error) {
+      // Re-throw the error so the LoginPage can handle it
       throw error;
     }
   };

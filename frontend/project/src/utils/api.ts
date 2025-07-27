@@ -2,7 +2,7 @@ import axios, { AxiosInstance, AxiosResponse } from 'axios';
 import Cookies from 'js-cookie';
 import { AuthResponse, Product, InventoryItem, SalesReport, Transaction, ApiError } from '../types';
 
-const API_BASE_URL = 'http://localhost:5000'; // Update this to your backend URL
+const API_BASE_URL = 'http://localhost:5000'; // Backend running without SSL
 
 class ApiClient {
   private client: AxiosInstance;
